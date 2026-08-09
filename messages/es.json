@@ -1,0 +1,179 @@
+{
+  "Index": {
+    "title": "La Travesía Campiña"
+  },
+  "Navbar": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "restaurant": "Restaurante",
+    "menu": "Nuestro Menú",
+    "farm": "La Granja",
+    "lodging": "Hospedaje",
+    "gallery": "Galería",
+    "contact": "Contacto",
+    "digitalMenu": "Menú Digital",
+    "fidelity": "Premios"
+  },
+  "Footer": {
+    "description": "Un proyecto familiar nacido en Quingeo. Todo lo que sirve en la mesa se produce aquí mismo, en nuestra propia tierra.",
+    "locationTitle": "¿Dónde estamos?",
+    "locationText": "Quingeo, Cuenca, Ecuador · a 22 km del centro",
+    "contactTitle": "Reservas y Contacto",
+    "reserveBtn": "Reservar ahora",
+    "rights": "Todos los derechos reservados."
+  },
+  "Menu": {
+    "cuyAsado": {
+      "name": "Cuy Asado Tradicional",
+      "desc": "Criado en nuestra granja, preparado con receta ancestral"
+    },
+    "fritada": {
+      "name": "Fritada Imbabureña",
+      "desc": "Cerdo de crianza libre con mote y llapingachos"
+    },
+    "llapingachos": {
+      "name": "Llapingachos",
+      "desc": "Tortillas de papa de nuestra huerta, chorizo y huevo"
+    },
+    "locro": {
+      "name": "Locro de Papa",
+      "desc": "Sopa tradicional espesa con aguacate y queso"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "title": "La Travesía Campiña",
+      "subtitle": "Pare un momento. Respire. Pruebe algo rico.",
+      "restaurantTitle": "La Mesa",
+      "restaurantAction": "Ver Menú",
+      "farmTitle": "El Origen",
+      "farmAction": "Conocer la Granja",
+      "lodgingTitle": "El Refugio",
+      "lodgingAction": "Ver Hospedaje"
+    },
+    "RestaurantIntro": {
+      "title": "Comida de verdad",
+      "description": "Todo lo que llega a su mesa salió esta mañana de nuestra granja. Sin intermediarios, sin congelados. El sabor de siempre, bien hecho."
+    },
+    "MenuPreview": {
+      "title": "Lo que hay en la carta",
+      "subtitle": "De la tierra al plato, sin rodeos",
+      "seeFullMenu": "Ver toda la carta"
+    },
+    "GranjaTeaser": {
+      "title": "Lo que come aquí, se crió aquí. Eso es todo.",
+      "cta": "Ver la granja"
+    },
+    "HospedajeTeaser": {
+      "title": "Quédese a dormir. Mañana desayuna con vista a los Andes.",
+      "cta": "Ver el hospedaje"
+    },
+    "ContactSection": {
+      "title": "Hablemos",
+      "subtitle": "Escríbanos por WhatsApp o venga nomás. Aquí siempre hay una mesa.",
+      "addressTitle": "Dónde estamos",
+      "address": "Quingeo, Cuenca, Ecuador",
+      "followUs": "Encuéntrenos en redes",
+      "formName": "Su nombre",
+      "formEmail": "Correo electrónico",
+      "formPhone": "Teléfono (opcional)",
+      "formMessage": "¿En qué le ayudamos?",
+      "formSubmit": "Enviar"
+    }
+  },
+  "Granja": {
+    "tradicion": {
+      "title": "Raíces de aquí",
+      "text": "En nuestra familia siempre se trabajó la tierra. Antes de abrir el restaurante, ya se sembraba, se criaba y se cosechaba en Quingeo. Esa forma de vivir es la que se ve en cada plato."
+    },
+    "sistema": {
+      "title": "Todo en un ciclo",
+      "text": "Lo que sobra en la cocina va al abono. El abono hace crecer las plantas. Las plantas alimentan a los animales. Y los animales terminan en su plato. Así de sencillo. Así de bien hecho."
+    },
+    "manejo": {
+      "title": "Crianza sin apuros",
+      "text": "Los cuyes, los cerdos y las gallinas crecen sueltos, sin hacinamiento, comiendo lo que da la propia tierra. Porque sabemos que un animal bien tratado produce la mejor carne. Y usted lo va a notar en el sabor."
+    }
+  },
+  "Galeria": {
+    "title": "Galería",
+    "subtitle": "Lo que verá cuando llegue",
+    "filterAll": "Todos",
+    "filterRestaurante": "Restaurante",
+    "filterGranja": "Granja",
+    "filterHospedaje": "Hospedaje",
+    "filterPlatos": "Gastronomía",
+    "alts": {
+      "restaurante1": "El restaurante La Travesía Campiña en Quingeo",
+      "restaurante2": "Ambiente de La Travesía, vista desde adentro",
+      "granja1": "Tradición y raíces de la granja familiar",
+      "granja2": "El ciclo de la tierra en La Travesía",
+      "granja3": "Crianza libre de animales en Quingeo",
+      "granja4": "La campiña azuaya a 2.800 msnm",
+      "hospedaje1": "El Refugio — habitaciones con vista a los Andes",
+      "plato1": "Cuy Asado Tradicional — el ícono de La Travesía",
+      "plato2": "Mix Tres Carnes La Travesía",
+      "plato3": "Filet Mignon en salsa de champiñones",
+      "plato4": "Cordon Bleu La Campiña",
+      "plato5": "Desayuno La Travesía",
+      "plato6": "Caldo de Gallina Criolla de la granja",
+      "plato7": "Locro de Papas con aguacate y queso",
+      "plato8": "Camarones al Ajillo",
+      "plato9": "Trucha Andina Frita",
+      "plato10": "Costilla a la Brasa",
+      "plato14": "Desayuno Americano",
+      "plato15": "Desayuno Continental",
+      "plato16": "Caldo de Patas",
+      "plato17": "Seco de Chivo",
+      "plato18": "Churrasco",
+      "plato19": "Lomo de Cerdo a la Brasa",
+      "plato20": "Pollo en Crema de Champiñones",
+      "plato21": "Corvina en Salsa de Limón",
+      "plato22": "Camarones Apanados",
+      "plato23": "Cuy Asado — desde la granja",
+      "plato24": "Empanadas de Viento",
+      "plato25": "Habas con Queso",
+      "plato26": "Tamales, Humitas y Quimbolitos",
+      "plato27": "Tortilla de Verde con Queso",
+      "bebida1": "Jarra de Canelazo caliente",
+      "bebida2": "Jarra de Horchata",
+      "bebida3": "Milkshakes artesanales",
+      "bebida4": "Aguas aromáticas de hierbas",
+      "postre1": "Banana Split",
+      "postre2": "Cheesecake de frutas",
+      "postre3": "Pie Artesanal",
+      "postre4": "Copa de Helado Doble",
+      "plato28": "Ceviche de Camarón",
+      "bebida5": "Jarra de Jugo Natural",
+      "bebida6": "Cerveza bien fría"
+    }
+  },
+  "Hospedaje": {
+    "title": "El Refugio",
+    "subtitle": "Quédese a dormir en Quingeo",
+    "description": "Habitaciones cómodas, baño privado, desayuno incluido y una vista a los Andes que no se olvida. Aquí el ruido de la ciudad queda lejos y se duerme de verdad.",
+    "priceFrom": "Desde",
+    "priceValue": "$77 / noche",
+    "priceDetail": "Desayuno continental o americano incluido",
+    "roomsTitle": "Las Habitaciones",
+    "roomsDesc": "Amplias, con baño privado y vista a la montaña o al jardín. Para descansar bien, sin más.",
+    "roomDoubleName": "Habitación Doble",
+    "roomDoubleDesc": "Para parejas. Cama matrimonial, baño privado y vista al jardín.",
+    "roomTripleName": "Habitación Triple",
+    "roomTripleDesc": "Para familias. Espacio de sobra y toda la comodidad.",
+    "roomSuiteName": "Suite La Campiña",
+    "roomSuiteDesc": "Lo mejor que tenemos. Terraza privada, chimenea y vista panorámica a los Andes.",
+    "amenitiesTitle": "Incluye todo esto",
+    "amenity1": "Baño privado en cada habitación",
+    "amenity2": "Artículos de aseo incluidos",
+    "amenity3": "TV y caja de seguridad",
+    "amenity4": "Terraza o balcón privado",
+    "amenity5": "Desayuno incluido a su gusto",
+    "amenity6": "Wi-Fi y parqueo gratuito",
+    "amenity7": "Recepción todo el día y check-in flexible",
+    "amenity8": "Ambiente libre de humo · Pet Friendly",
+    "bookingTitle": "¿Cuándo se queda?",
+    "bookingText": "Escríbanos por WhatsApp y le confirmamos disponibilidad enseguida. Sin tramites, sin rodeos.",
+    "bookingBtn": "Reservar por WhatsApp"
+  }
+}

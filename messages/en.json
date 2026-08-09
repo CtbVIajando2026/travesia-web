@@ -1,0 +1,157 @@
+{
+  "Index": {
+    "title": "La Travesía Campiña"
+  },
+  "Navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "restaurant": "Restaurant",
+    "menu": "Our Menu",
+    "farm": "The Farm",
+    "lodging": "Lodging",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "digitalMenu": "Digital Menu",
+    "fidelity": "Rewards"
+  },
+  "Footer": {
+    "description": "Born in Quingeo, in the heart of Azuay, as a family project. From our farm to your table in minutes, not kilometers.",
+    "locationTitle": "Location",
+    "locationText": "Quingeo, Cuenca, Ecuador (22 km from downtown)",
+    "contactTitle": "Contact & Reservations",
+    "reserveBtn": "Book Now",
+    "rights": "All rights reserved."
+  },
+  "Menu": {
+    "cuyAsado": {
+      "name": "Traditional Roasted Guinea Pig",
+      "desc": "Raised on our farm, prepared with an ancestral recipe"
+    },
+    "fritada": {
+      "name": "Imbabureña Fritada",
+      "desc": "Free-range pork with mote and llapingachos"
+    },
+    "llapingachos": {
+      "name": "Llapingachos",
+      "desc": "Potato patties from our garden, sausage and egg"
+    },
+    "locro": {
+      "name": "Locro de Papa",
+      "desc": "Traditional thick potato soup with avocado and cheese"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "title": "La Travesía Campiña",
+      "subtitle": "Take a break in your journey with us.",
+      "restaurantTitle": "The Table",
+      "restaurantAction": "View Menu",
+      "farmTitle": "The Origin",
+      "farmAction": "Discover Farm",
+      "lodgingTitle": "The Refuge",
+      "lodgingAction": "View Lodging"
+    },
+    "RestaurantIntro": {
+      "title": "The Table",
+      "description": "A culinary experience that pays homage to the flavors of the countryside. Each dish is a masterpiece crafted with fresh ingredients from our own land."
+    },
+    "MenuPreview": {
+      "title": "Our Menu",
+      "subtitle": "Taste the land in every dish",
+      "seeFullMenu": "See Full Menu"
+    },
+    "GranjaTeaser": {
+      "title": "From our farm to your table in minutes, not kilometers.",
+      "cta": "Discover the farm"
+    },
+    "HospedajeTeaser": {
+      "title": "An Andean refuge designed for your rest and disconnection.",
+      "cta": "Explore lodging"
+    },
+    "ContactSection": {
+      "title": "Contact Us",
+      "subtitle": "We are here to make your visit unforgettable. Visit us in the countryside or drop us a message.",
+      "addressTitle": "Our Location",
+      "address": "Quingeo, Cuenca, Ecuador",
+      "followUs": "Follow us",
+      "formName": "Full Name",
+      "formEmail": "Email Address",
+      "formPhone": "Phone Number (optional)",
+      "formMessage": "Your Message",
+      "formSubmit": "Send Message"
+    }
+  },
+  "Granja": {
+    "tradicion": {
+      "title": "Ancestral Heritage",
+      "text": "Our connection to the land goes back generations. We honor Andean tradition not only in the kitchen, but in the deep respect for natural cycles and our culture's ways of life."
+    },
+    "sistema": {
+      "title": "Agroecological Cycle",
+      "text": "We are not just a restaurant, we are an ecosystem. Kitchen waste feeds the soil, the soil nourishes our crops, and our crops sustain our animals in a perfect cycle of sustainability."
+    },
+    "manejo": {
+      "title": "Transparency & Handling",
+      "text": "Our animals, like guinea pigs and pigs, are raised in wide spaces, with natural feeding and strict welfare standards. We believe dish quality starts with respect and care on the farm."
+    }
+  },
+  "Galeria": {
+    "title": "Visual Gallery",
+    "subtitle": "From land to plate",
+    "filterAll": "All",
+    "filterRestaurante": "Restaurant",
+    "filterGranja": "Farm",
+    "filterHospedaje": "Lodging",
+    "filterPlatos": "Gastronomy",
+    "alts": {
+      "restaurante1": "La Travesía Campiña restaurant view in Quingeo",
+      "restaurante2": "Ambiance and architecture of La Travesía",
+      "granja1": "Ancestral heritage and Andean tradition of the farm",
+      "granja2": "Agroecological cycle at La Travesía",
+      "granja3": "Responsible animal husbandry on the farm",
+      "granja4": "Fields and nature of Quingeo",
+      "hospedaje1": "Rooms and suites of El Refugio La Travesía",
+      "plato1": "Traditional Roasted Guinea Pig — La Travesía icon",
+      "plato2": "Three Meat Mix La Travesía — house specialty",
+      "plato3": "Filet Mignon in mushroom and red wine sauce",
+      "plato4": "Cordon Bleu La Campiña with mustard sauce",
+      "plato5": "La Travesía Breakfast with farm-fresh ingredients",
+      "plato6": "Free-range Hen Broth from our own farm",
+      "plato7": "Traditional Potato Locro with avocado and cheese",
+      "plato8": "Garlic Shrimp in creamy garlic and wine sauce",
+      "bebida1": "Traditional hot Canelazo pitcher",
+      "postre1": "Banana Split with artisanal ice cream",
+      "postre2": "Fruit Cheesecake with homemade coulis",
+      "plato9": "Andean Fried Trout with hominy and avocado",
+      "plato10": "Grilled Ribs with rustic potatoes"
+    }
+  },
+  "Hospedaje": {
+    "title": "The Refuge",
+    "subtitle": "Lodging in the heart of Quingeo",
+    "description": "Our cozy rooms and suites are designed to disconnect from the urban routine. A peaceful environment surrounded by nature, fresh air, and the authentic Andean landscape of the Azuay countryside.",
+    "priceFrom": "Rates from",
+    "priceValue": "$77 / night",
+    "priceDetail": "Continental or American breakfast included",
+    "roomsTitle": "Our Rooms",
+    "roomsDesc": "Cozy spaces with private bathrooms and spectacular views of the mountain or the garden.",
+    "roomDoubleName": "Double Room",
+    "roomDoubleDesc": "Ideal for couples, equipped with a double bed and garden views.",
+    "roomTripleName": "Triple Room",
+    "roomTripleDesc": "Perfect for small families, with guaranteed space and comfort.",
+    "roomSuiteName": "La Campiña Suite",
+    "roomSuiteDesc": "Our premium option with a private terrace, fireplace, and panoramic views.",
+    "amenitiesTitle": "Amenities Included",
+    "amenity1": "Private bathroom in each room",
+    "amenity2": "Toiletries included",
+    "amenity3": "Flat-screen TV and Safe box",
+    "amenity4": "Private terrace or balcony",
+    "amenity5": "Complimentary breakfast of your choice",
+    "amenity6": "Free Wi-Fi and private parking",
+    "amenity7": "24-hour reception and flexible check-in/out",
+    "amenity8": "Smoke-free environment · Pet Friendly",
+    "bookingTitle": "Book your stay",
+    "bookingText": "Take a break in your journey with us. Contact us directly via WhatsApp to check availability and make your reservation.",
+    "bookingBtn": "Book via WhatsApp"
+  }
+}
