@@ -12,9 +12,7 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  experimental: {
-    optimizeCss: true,
-  },
+  experimental: {},
 };
 
 export default withNextIntl(nextConfig);
