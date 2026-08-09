@@ -238,7 +238,7 @@ export default function RestauranteClient({ locale }: { locale: string }) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {FEATURED_DISHES.map((dish, idx) => (
+            {FEATURED_DISHES.map((dish) => (
               <div
                 key={dish.id}
                 className="group bg-cream border border-gold/15 hover:border-gold/50 rounded-sm p-7 flex flex-col gap-4 transition-all duration-300 hover:shadow-lg"
