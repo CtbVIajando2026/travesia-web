@@ -17,13 +17,12 @@ export type MenuCategory = {
   items: MenuItem[];
 };
 
-const IMG = '/menu-standalone/images';
 
 export const fullMenu: MenuCategory[] = [
   {
     id: "despertar",
-    esTitle: "El Despertar",
-    enTitle: "The Awakening",
+    esTitle: "Desayunos",
+    enTitle: "Breakfast",
     icon: "☀️",
     items: [
       {
@@ -34,7 +33,6 @@ export const fullMenu: MenuCategory[] = [
         enDesc: "Coffee or herbal tea, mashed green plantain with pork cracklings and cheese, 2 fried eggs, ranch sausage and a glass of natural juice.",
         price: 5.50,
         featured: true,
-        image: `${IMG}/desayunolatravesia.jpg`,
       },
       {
         id: "d2",
@@ -43,7 +41,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Café o agua aromática, huevos revueltos, rollitos de jamón y queso, tostadas o pan, porción de frutas, jugo natural, mermelada y mantequilla.",
         enDesc: "Coffee or herbal tea, scrambled eggs, ham and cheese rolls, toast or bread, fruit portion, natural juice, jam and butter.",
         price: 5.00,
-        image: `${IMG}/desayunoamericano.jpg`,
       },
       {
         id: "d3",
@@ -52,7 +49,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Café o agua aromática, huevos revueltos, rollitos de queso, tostadas o pan, jugo natural, mermelada y mantequilla.",
         enDesc: "Coffee or herbal tea, scrambled eggs, cheese rolls, toast or bread, natural juice, jam and butter.",
         price: 4.50,
-        image: `${IMG}/desayunocontinental.jpg`,
       },
       {
         id: "d4",
@@ -61,14 +57,13 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Café o agua aromática, tostadas o pan, mermelada y mantequilla.",
         enDesc: "Coffee or herbal tea, toast or bread, jam and butter.",
         price: 3.50,
-        image: `${IMG}/desayunoartesanal.jpg`,
       },
     ],
   },
   {
     id: "compartir",
-    esTitle: "Para Compartir",
-    enTitle: "To Share",
+    esTitle: "Entradas para compartir",
+    enTitle: "Starters to Share",
     icon: "🤝",
     items: [
       {
@@ -78,16 +73,14 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Crujientes, acompañados de mayonesa de la casa.",
         enDesc: "Crispy, served with house mayonnaise.",
         price: 3.00,
-        image: `${IMG}/bastonesdeverde.jpg`,
       },
       {
         id: "c2",
         esName: "Habas con Queso",
         enName: "Fava Beans with Cheese",
-        esDesc: "Tradicionales y frescas de nuestra huerta.",
-        enDesc: "Traditional and fresh from our garden.",
+        esDesc: "Habas tiernas de nuestra huerta con queso fresco. Un clásico para picar.",
+        enDesc: "Tender fava beans from our garden with fresh cheese. A classic to share.",
         price: 3.00,
-        image: `${IMG}/habasconqueso.jpg`,
       },
       {
         id: "c3",
@@ -96,7 +89,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Bañados en salsa de queso caliente.",
         enDesc: "Bathed in hot cheese sauce.",
         price: 3.00,
-        image: `${IMG}/porciondenachos.jpg`,
       },
       {
         id: "c4",
@@ -105,25 +97,22 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Hecha en casa, dorada a la perfección.",
         enDesc: "Homemade, golden-browned to perfection.",
         price: 2.50,
-        image: `${IMG}/tortilladeverdeconqueso.jpg`,
       },
       {
         id: "c5",
         esName: "Tamales / Humitas / Quimbolitos",
         enName: "Tamales / Humitas / Quimbolitos",
-        esDesc: "Especialidades locales envueltas tradicionales.",
-        enDesc: "Traditional wrapped local specialties.",
+        esDesc: "Los clásicos envueltos en hoja, hechos como en casa. Perfectos con un cafecito.",
+        enDesc: "Classic Ecuadorian corn treats wrapped in leaves, homemade. Perfect with coffee.",
         price: 1.25,
-        image: `${IMG}/tamaleshumitasquimbolitos.jpg`,
       },
       {
         id: "c6",
         esName: "Empanadas de Viento",
         enName: "Wind Empanadas",
-        esDesc: "Grandes y crujientes espolvoreadas con azúcar.",
-        enDesc: "Large and crispy sprinkled with sugar.",
+        esDesc: "Grandes, infladas y crujientes, con su azúcar encima.",
+        enDesc: "Big, puffy and crispy, with a dusting of sugar.",
         price: 1.00,
-        image: `${IMG}/empanadasdeviento.jpg`,
       },
     ],
   },
@@ -141,7 +130,6 @@ export const fullMenu: MenuCategory[] = [
         enDesc: "Rich broth with free-range chicken from our farm and fresh vegetables.",
         price: 6.00,
         featured: true,
-        image: `${IMG}/caldodegallinacriolla.jpg`,
       },
       {
         id: "s2",
@@ -150,7 +138,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Sopa tradicional con mote, leche y un toque de cilantro.",
         enDesc: "Traditional broth with hominy, milk and a touch of cilantro.",
         price: 6.00,
-        image: `${IMG}/caldodepatas.jpg`,
       },
       {
         id: "s3",
@@ -159,7 +146,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Sopa tradicional espesa con aguacate fresco y queso de campo.",
         enDesc: "Traditional thick potato soup served with fresh avocado and farm cheese.",
         price: 5.00,
-        image: `${IMG}/locrodepapas.jpg`,
       },
     ],
   },
@@ -170,6 +156,15 @@ export const fullMenu: MenuCategory[] = [
     icon: "🍽️",
     items: [
       {
+        id: "f0",
+        esName: "Cuy Asado Tradicional",
+        enName: "Traditional Roasted Cuy",
+        esDesc: "El plato estrella de la casa: cuy criado en nuestra granja, asado con receta de familia, con papas doradas, arroz, mote y ají de la huerta.",
+        enDesc: "Our signature dish: cuy (guinea pig) raised on our farm, roasted with a family recipe, with golden potatoes, rice, hominy and garden chili sauce.",
+        price: 24.50,
+        featured: true,
+      },
+      {
         id: "f1",
         esName: "Mix Tres Carnes 'La Travesía'",
         enName: "'La Travesía' Three Meat Mix",
@@ -177,7 +172,6 @@ export const fullMenu: MenuCategory[] = [
         enDesc: "Creamy lentil moro, tenderloin, chicken fillet and pork fillet grilled portions.",
         price: 13.99,
         featured: true,
-        image: `${IMG}/mixtrescarneslatravesia.jpg`,
       },
       {
         id: "f2",
@@ -187,7 +181,6 @@ export const fullMenu: MenuCategory[] = [
         enDesc: "In mushroom and red wine sauce, mashed potatoes and sautéed garden vegetables.",
         price: 17.50,
         featured: true,
-        image: `${IMG}/filetmignon.jpg`,
       },
       {
         id: "f3",
@@ -196,7 +189,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Pechuga de pollo rellena con queso mozzarella y jamón, bañada en suave salsa de mostaza.",
         enDesc: "Chicken breast stuffed with mozzarella cheese and ham, covered in mild mustard sauce.",
         price: 14.50,
-        image: `${IMG}/cordonbleulacampina.jpg`,
       },
       {
         id: "f4",
@@ -206,7 +198,6 @@ export const fullMenu: MenuCategory[] = [
         enDesc: "Our house specialty: tender breast in a creamy white wine and mushroom sauce.",
         price: 9.99,
         featured: true,
-        image: `${IMG}/polloencremadechampinones.jpg`,
       },
       {
         id: "f5",
@@ -215,7 +206,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Bistec de carne jugosa, arroz blanco, huevo frito, papas fritas, ensalada y aguacate.",
         enDesc: "Juicy beef steak, white rice, fried egg, french fries, salad and avocado.",
         price: 9.50,
-        image: `${IMG}/churrasco.jpg`,
       },
       {
         id: "f6",
@@ -224,7 +214,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Costilla de cerdo marinada a la brasa con papas rústicas y ensalada.",
         enDesc: "Grilled marinated pork ribs served with rustic potatoes and salad.",
         price: 9.50,
-        image: `${IMG}/costillaalabrasa.jpg`,
       },
       {
         id: "f7",
@@ -233,7 +222,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Pasta artesanal con opción de salsa Alfredo o Boloñesa de la casa.",
         enDesc: "Artisanal pasta with option of house Alfredo or Bolognese sauce.",
         price: 8.50,
-        image: `${IMG}/spaghettiofettuccine.jpg`,
       },
       {
         id: "f8",
@@ -242,7 +230,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Tierno lomo de cerdo a las brasas con mote y vegetales campestres.",
         enDesc: "Tender pork loin grilled with hominy and country vegetables.",
         price: 8.00,
-        image: `${IMG}/lomodecerdoalabrasa.jpg`,
       },
       {
         id: "f9",
@@ -251,7 +238,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Pechuga de pollo glaseada con salsa de naranja natural y arroz.",
         enDesc: "Chicken breast glazed with fresh orange sauce, served with rice.",
         price: 8.00,
-        image: `${IMG}/filetedepolloalanaranja.jpg`,
       },
       {
         id: "f10",
@@ -260,14 +246,13 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Guiso tradicional cocinado lentamente con cerveza, arroz amarillo y maduro frito.",
         enDesc: "Traditional slow-cooked goat stew with beer, yellow rice and sweet plantain.",
         price: 6.00,
-        image: `${IMG}/secodechivo.jpg`,
       },
     ],
   },
   {
     id: "mar",
-    esTitle: "Del Mar",
-    enTitle: "From the Sea",
+    esTitle: "Mariscos y pescados",
+    enTitle: "Seafood & Fish",
     icon: "🐟",
     items: [
       {
@@ -277,7 +262,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Filete de corvina fresca sellado, bañado en salsa cítrica de limón, ensalada y papas.",
         enDesc: "Seared fresh sea bass fillet, covered in citrus lemon sauce, salad and potatoes.",
         price: 10.99,
-        image: `${IMG}/corvinaensalsadelimon.jpg`,
       },
       {
         id: "m2",
@@ -286,7 +270,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Camarones salteados en salsa cremosa de ajo y vino blanco, arroz y patacones.",
         enDesc: "Sautéed shrimp in creamy garlic and white wine sauce, rice and green plantain rounds.",
         price: 9.00,
-        image: `${IMG}/camaronesalajillo.jpg`,
       },
       {
         id: "m3",
@@ -295,7 +278,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Ceviche ecuatoriano tradicional marinado en limón fresco, cebolla, tomate y cilantro.",
         enDesc: "Traditional Ecuadorian ceviche marinated in fresh lime, onion, tomato and cilantro.",
         price: 8.50,
-        image: `${IMG}/cevichedecamaron.jpg`,
       },
       {
         id: "m4",
@@ -304,7 +286,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Camarones crujientes dorados, papas fritas y salsa tártara de la casa.",
         enDesc: "Crispy golden shrimp, french fries and house tartar sauce.",
         price: 8.50,
-        image: `${IMG}/camaronesapanados.jpg`,
       },
       {
         id: "m5",
@@ -313,7 +294,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Trucha andina entera frita, mote, ensalada fresca y aguacate.",
         enDesc: "Whole fried Andean trout served with hominy, fresh salad and avocado.",
         price: 8.50,
-        image: `${IMG}/truchafrita.jpg`,
       },
     ],
   },
@@ -330,7 +310,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "6 alitas bañadas en salsa BBQ dulce con papas fritas.",
         enDesc: "6 wings glazed in sweet BBQ sauce with french fries.",
         price: 8.00,
-        image: `${IMG}/alitasbbqconpapas.jpg`,
       },
       {
         id: "k2",
@@ -339,7 +318,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Carne artesanal, queso derretido, lechuga y papas fritas.",
         enDesc: "Homemade beef patty, melted cheese, lettuce and french fries.",
         price: 6.00,
-        image: `${IMG}/burgerlatravesia.jpg`,
       },
       {
         id: "k3",
@@ -348,7 +326,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Crujientes bocadillos de pollo con papas fritas y salsa.",
         enDesc: "Crispy chicken nuggets served with french fries and sauce.",
         price: 5.00,
-        image: `${IMG}/nuggetsconpapas.jpg`,
       },
       {
         id: "k4",
@@ -357,7 +334,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Papas fritas con rodajas de salchicha ranchera y salsas.",
         enDesc: "French fries with sliced ranch sausage and dipping sauces.",
         price: 3.50,
-        image: `${IMG}/ranchipapas.jpg`,
       },
     ],
   },
@@ -374,7 +350,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Tres sabores de helado, banana, salsa de chocolate, crema batida y cereza.",
         enDesc: "Three ice cream flavors, banana, chocolate syrup, whipped cream and a cherry.",
         price: 4.75,
-        image: `${IMG}/bananasplit.jpg`,
       },
       {
         id: "p2",
@@ -383,7 +358,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Cremoso postre con salsa casera de frutos rojos o maracuyá.",
         enDesc: "Creamy dessert with homemade red berries or passion fruit coulis.",
         price: 3.75,
-        image: `${IMG}/cheesecake.jpg`,
       },
       {
         id: "p3",
@@ -392,16 +366,14 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Frutas de temporada picadas con yogur natural y granola artesanal.",
         enDesc: "Chopped seasonal fruits with plain yogurt and artisanal granola.",
         price: 3.75,
-        image: `${IMG}/copadefrutaconyogur.jpg`,
       },
       {
         id: "p4",
         esName: "Pie Artesanal (Limón / Oreo / Mora)",
         enName: "Artisanal Pie (Lemon / Oreo / Blackberry)",
-        esDesc: "Delicioso pie horneado diariamente en nuestra cocina.",
-        enDesc: "Delicious pie baked daily in our kitchen.",
+        esDesc: "Horneado cada día en nuestra cocina. Pregunta por el sabor del día.",
+        enDesc: "Baked fresh every day in our kitchen. Ask for today's flavor.",
         price: 3.50,
-        image: `${IMG}/pieartesanal.jpg`,
       },
       {
         id: "p5",
@@ -410,7 +382,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Dos porciones de helado artesanal a elección.",
         enDesc: "Two scoops of artisanal ice cream of your choice.",
         price: 3.50,
-        image: `${IMG}/copadeheladodoble.jpg`,
       },
       {
         id: "p6",
@@ -419,14 +390,13 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Una porción de helado artesanal a elección.",
         enDesc: "One scoop of artisanal ice cream of your choice.",
         price: 2.50,
-        image: `${IMG}/copadeheladosimple.jpg`,
       },
     ],
   },
   {
     id: "bebidas",
     esTitle: "Bebidas",
-    enTitle: "Beverages",
+    enTitle: "Drinks",
     icon: "🥤",
     items: [
       {
@@ -436,7 +406,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Bebida caliente tradicional con canela, naranjilla y aguardiente.",
         enDesc: "Traditional hot drink brewed with cinnamon, naranjilla fruit and local spirit.",
         price: 10.00,
-        image: `${IMG}/jarradecanelazo.jpg`,
       },
       {
         id: "b2",
@@ -445,7 +414,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Fruta fresca licuada de temporada (mora, guanábana, maracuyá).",
         enDesc: "Fresh blended seasonal fruit juice (blackberry, soursop, passion fruit).",
         price: 5.00,
-        image: `${IMG}/jarradejugonatural.jpg`,
       },
       {
         id: "b3",
@@ -454,7 +422,6 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Infusión caliente tradicional de flores medicinales andinas y limón.",
         enDesc: "Traditional hot herbal infusion of Andean flowers and lemon.",
         price: 5.00,
-        image: `${IMG}/jarradehorchata.jpg`,
       },
       {
         id: "b5",
@@ -463,28 +430,24 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Batidos cremosos de helado de chocolate, vainilla o frutilla.",
         enDesc: "Creamy milkshakes made with chocolate, vanilla or strawberry ice cream.",
         price: 4.25,
-        image: `${IMG}/milkshakes.jpg`,
       },
       {
         id: "b6",
         esName: "Cerveza Grande",
         enName: "Large Beer",
         price: 3.00,
-        image: `${IMG}/cervezagrande.jpg`,
       },
       {
         id: "b7",
         esName: "Capuchino",
         enName: "Cappuccino",
         price: 2.75,
-        image: `${IMG}/capuchino.jpg`,
       },
       {
         id: "b8",
         esName: "Cerveza Personal",
         enName: "Personal Beer",
         price: 2.00,
-        image: `${IMG}/cervezapersonal.jpg`,
       },
       {
         id: "b9",
@@ -493,35 +456,30 @@ export const fullMenu: MenuCategory[] = [
         esDesc: "Hecho con cacao puro de aroma y leche fresca.",
         enDesc: "Made with pure aromatic cocoa and fresh milk.",
         price: 2.50,
-        image: `${IMG}/chocolateartesanal.jpg`,
       },
       {
         id: "b10",
         esName: "Vaso de Jugo Natural",
         enName: "Glass of Natural Juice",
         price: 1.50,
-        image: `${IMG}/vasodejugonatural.jpg`,
       },
       {
         id: "b11",
         esName: "Café Americano / Expreso",
         enName: "Americano / Espresso Coffee",
         price: 1.50,
-        image: `${IMG}/cafeamericanoexpreso.jpg`,
       },
       {
         id: "b12",
         esName: "Aguas Aromáticas",
         enName: "Herbal Teas",
         price: 1.50,
-        image: `${IMG}/aguasaromaticas.jpg`,
       },
       {
         id: "b13",
         esName: "Agua Mineral / Sin Gas",
         enName: "Mineral / Still Water",
         price: 0.75,
-        image: `${IMG}/botelladeagua.jpg`,
       },
     ],
   },

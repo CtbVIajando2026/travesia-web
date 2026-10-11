@@ -51,8 +51,8 @@ export default function GaleriaGrid() {
               key={key}
               onClick={() => changeFilter(key)}
               className={[
-                'relative px-4 py-2 font-sans text-xs uppercase tracking-widest font-semibold transition-colors duration-200',
-                activeFilter === key ? 'text-forest-dark' : 'text-forest-mid/60 hover:text-forest-mid',
+                'relative px-4 py-3 font-sans text-xs uppercase tracking-widest font-semibold transition-colors duration-200',
+                activeFilter === key ? 'text-forest-dark' : 'text-forest-mid/80 hover:text-forest-mid',
               ].join(' ')}
             >
               {t(labelKey)}
@@ -90,7 +90,7 @@ export default function GaleriaGrid() {
                 loading={i < 4 ? 'eager' : 'lazy'}
               />
               <div className="absolute inset-0 bg-forest-dark/0 group-hover:bg-forest-dark/30 transition-colors duration-300 flex items-end p-4">
-                <span className="text-cream font-sans text-[10px] uppercase tracking-widest font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                <span className="text-cream font-sans text-[11px] uppercase tracking-widest font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                   {t(`alts.${img.altKey}`)}
                 </span>
               </div>

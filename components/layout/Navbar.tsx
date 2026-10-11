@@ -18,9 +18,23 @@ export default function Navbar({ locale, forceBackground = false }: { locale: st
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Menú móvil: bloquear scroll del fondo y cerrar con Escape
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setIsMobileMenuOpen(false); };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [isMobileMenuOpen]);
 
   const hasBg = forceBackground || scrolled;
 
@@ -39,7 +53,7 @@ export default function Navbar({ locale, forceBackground = false }: { locale: st
 
   // Mobile link classes
   const mobileLinkClass = (href: string) =>
-    `font-playfair text-3xl font-medium transition-colors duration-200
+    `font-playfair text-3xl [@media(max-height:560px)]:text-2xl transition-colors duration-200
      ${isActive(href) ? 'text-gold' : 'text-cream hover:text-gold'}`;
 
   const NAV_LINKS = [
@@ -55,17 +69,17 @@ export default function Navbar({ locale, forceBackground = false }: { locale: st
 
   return (
     <nav className={`fixed w-full top-0 z-50 transition-all duration-500 border-b ${hasBg ? 'bg-forest/95 backdrop-blur-md border-forest-mid shadow-sm' : 'bg-transparent border-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="relative z-50 max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
         {/* Left - Logo */}
         <div className="flex-shrink-0">
-          <Link href={`/${locale}`} className="flex items-center gap-2 group">
+          <Link href={`/${locale}`} className="flex items-center gap-2 group" aria-label="La Travesía — Inicio">
             <Image
               src="/images/logo_travesia.png"
               alt="La Travesía"
-              width={120}
-              height={48}
-              className="h-12 w-auto object-contain brightness-0 invert"
+              width={64}
+              height={64}
+              className="h-14 w-14 md:h-16 md:w-16 object-contain brightness-0 invert"
               priority
             />
           </Link>
@@ -92,8 +106,12 @@ export default function Navbar({ locale, forceBackground = false }: { locale: st
 
           {/* Mobile menu trigger */}
           <button
+            type="button"
             className="xl:hidden text-cream p-2 z-50 relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (
@@ -114,9 +132,10 @@ export default function Navbar({ locale, forceBackground = false }: { locale: st
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-forest/98 backdrop-blur-xl flex flex-col items-center justify-center min-h-screen"
+            id="mobile-menu"
+            className="fixed inset-0 z-40 h-[100svh] overflow-y-auto bg-forest-dark flex flex-col items-center justify-center py-24 [@media(max-height:560px)]:py-20"
           >
-            <div className="flex flex-col items-center gap-8 mt-16">
+            <div className="flex flex-col items-center gap-6 [@media(max-height:560px)]:grid [@media(max-height:560px)]:grid-cols-2 [@media(max-height:560px)]:gap-x-12 [@media(max-height:560px)]:gap-y-2">
               {NAV_LINKS.map(({ href, label }) => (
                 <Link
                   key={href}
@@ -132,10 +151,13 @@ export default function Navbar({ locale, forceBackground = false }: { locale: st
               ))}
             </div>
 
-            <div className="mt-16 flex items-center gap-4">
-              <div className="w-12 h-[1px] bg-gold/50"></div>
-              <span className="font-sans text-xs tracking-widest text-gold uppercase">La Travesía</span>
-              <div className="w-12 h-[1px] bg-gold/50"></div>
+            <div className="mt-12 [@media(max-height:560px)]:mt-6 flex flex-col items-center gap-6 [@media(max-height:560px)]:gap-3">
+              <SocialIcons size="md" color="light" includeWhatsApp={true} className="gap-5" />
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-[1px] bg-gold/50"></div>
+                <span className="font-sans text-xs tracking-widest text-gold uppercase">La Travesía</span>
+                <div className="w-12 h-[1px] bg-gold/50"></div>
+              </div>
             </div>
           </motion.div>
         )}

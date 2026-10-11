@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# La Travesía Campiña — sitio web
 
-## Getting Started
+Restaurante, granja y hospedaje en Quingeo, Cuenca (Ecuador). Next.js 14 (App Router) + Tailwind + next-intl (es/en).
 
-First, run the development server:
+## Arrancar en local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000  (redirige a /es)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+En Mac también puedes hacer doble clic en `iniciar.command`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Variables de entorno (opcionales)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Para qué | Valor por defecto |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Dominio real: canonical, Open Graph, sitemap y robots | `https://latravesiacuenca.com` |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número del botón flotante y formulario | `593990136060` |
 
-## Learn More
+Configúralas en Vercel → Settings → Environment Variables.
 
-To learn more about Next.js, take a look at the following resources:
+## Estructura
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/[locale]/…` — páginas (inicio, nosotros, restaurante, menu, granja, hospedaje, galeria, contacto)
+- `components/` — secciones por página + `layout/` (Navbar, Footer) + `ui/`
+- `messages/es.json`, `messages/en.json` — textos traducidos
+- `data/` — menú completo, galería y bloques de la granja
+- `lib/seo.ts` — metadatos por página con hreflang es/en
+- `app/sitemap.ts`, `app/robots.ts` — SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tipografías
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Playfair Display (títulos), Cormorant Garamond (citas/itálicas) y DM Sans (texto), cargadas con `next/font` y registradas en `tailwind.config.ts` como `font-playfair`, `font-cormorant` y `font-sans`.

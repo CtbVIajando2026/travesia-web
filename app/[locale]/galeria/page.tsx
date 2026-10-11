@@ -6,11 +6,14 @@ import GaleriaGrid from '@/components/galeria/GaleriaGrid';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Galería de Fotos | La Travesía',
-  description: 'Explora nuestra galería visual. Descubre los rincones de nuestro restaurante, los platillos y la belleza de la campiña.',
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return pageMetadata(locale, '/galeria',
+    { title: 'Galería de fotos', description: 'El restaurante, la granja y el hospedaje de La Travesía en imágenes. Así se ve la campiña de Quingeo.' },
+    { title: 'Photo Gallery', description: 'The restaurant, farm and lodging at La Travesía in pictures. This is the Quingeo countryside.' },
+  );
+}
 
 export default function GaleriaPage({
   params: {locale}

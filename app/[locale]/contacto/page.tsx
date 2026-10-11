@@ -4,11 +4,14 @@ import Footer from '@/components/layout/Footer';
 import ContactSection from '@/components/home/ContactSection';
 
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Contacto & Reservas | La Travesía',
-  description: 'Contáctanos para reservaciones, eventos o consultas. Encuentra nuestra ubicación en Quingeo y visítanos.',
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return pageMetadata(locale, '/contacto',
+    { title: 'Contacto y reservas', description: 'Reserva tu mesa o tu habitación por WhatsApp. Ubicación, redes sociales y cómo llegar a La Travesía en Quingeo, Cuenca.' },
+    { title: 'Contact & Reservations', description: 'Book a table or a room via WhatsApp. Location, social media and directions to La Travesía in Quingeo, Cuenca.' },
+  );
+}
 
 export default function ContactoPage({
   params: {locale}

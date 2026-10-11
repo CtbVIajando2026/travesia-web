@@ -28,7 +28,7 @@ export default function TradicionBlock() {
             {t(block.titleKey)}
           </h2>
           <div className="w-12 h-px bg-gold mb-8"></div>
-          <p className="font-cormorant text-xl md:text-2xl text-cream-warm leading-relaxed">
+          <p className="font-cormorant text-xl md:text-2xl text-cream-warm leading-relaxed font-medium">
             {t(block.textKey)}
           </p>
         </div>

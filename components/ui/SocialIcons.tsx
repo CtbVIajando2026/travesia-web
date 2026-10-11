@@ -79,7 +79,7 @@ export default function SocialIcons({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={name}
-          className={`transition-colors duration-200 ${colorMap[color]}`}
+          className={`inline-flex items-center justify-center min-w-[40px] min-h-[40px] -m-1.5 p-1.5 transition-colors duration-200 ${colorMap[color]}`}
         >
           <span className={`inline-block flex-shrink-0 ${sizeMap[size]}`}>{icon}</span>
         </a>

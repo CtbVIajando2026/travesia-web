@@ -11,52 +11,56 @@ const FEATURED_DISHES = [
     id: 'cuy',
     emoji: '🐾',
     esName: 'Cuy Asado Tradicional',
-    enName: 'Traditional Roasted Guinea Pig',
-    esDesc: 'Criado en nuestra propia granja, preparado con receta ancestral. Papas doradas, arroz, mote y ají.',
-    enDesc: 'Raised on our farm, prepared with an ancestral recipe. Golden potatoes, rice, hominy and hot sauce.',
-    price: null,
-    tag: 'Ícono',
+    enName: 'Traditional Roasted Cuy',
+    esDesc: 'El plato estrella de la casa: cuy criado en nuestra granja y asado con receta de familia. Con papas doradas, arroz, mote y ají de la huerta.',
+    enDesc: 'Our signature dish: cuy raised on our farm and roasted with a family recipe. With golden potatoes, rice, hominy and garden chili sauce.',
+    price: '$24.50',
+    tag: 'Plato estrella',
   },
   {
     id: 'mix',
     emoji: '🍖',
     esName: 'Mix Tres Carnes La Travesía',
     enName: 'Three Meat Mix La Travesía',
-    esDesc: 'Moro cremoso de lenteja, lomo fino, filete de pollo y cerdo a la parrilla. La experiencia completa.',
-    enDesc: 'Creamy lentil rice, tenderloin, chicken fillet and grilled pork fillet. The complete experience.',
+    esDesc: 'Lomo fino, filete de pollo y cerdo a la parrilla, con un moro de lenteja cremoso. Para compartir… o no.',
+    enDesc: 'Grilled tenderloin, chicken fillet and pork, with creamy lentil rice. For sharing… or not.',
     price: '$13.99',
-    tag: 'Especialidad',
+    tag: 'Para compartir',
   },
   {
     id: 'filet',
     emoji: '🥩',
     esName: 'Filet Mignon',
     enName: 'Filet Mignon',
-    esDesc: 'En salsa de champiñones y vino tinto, puré de papas artesanal y vegetales de nuestra huerta.',
-    enDesc: 'In mushroom and red wine sauce, artisanal mashed potatoes and garden vegetables.',
+    esDesc: 'Jugoso y en su punto, en salsa de champiñones al vino tinto, con puré de la casa y vegetales de la huerta.',
+    enDesc: 'Juicy and cooked to order, in a mushroom and red wine sauce, with house mashed potatoes and garden vegetables.',
     price: '$17.50',
-    tag: 'Premium',
+    tag: 'Gourmet',
   },
   {
     id: 'cordon',
     emoji: '🍗',
     esName: 'Cordon Bleu La Campiña',
     enName: 'Cordon Bleu La Campiña',
-    esDesc: 'Pechuga rellena de queso mozzarella y jamón, en suave salsa de mostaza artesanal.',
-    enDesc: 'Chicken breast stuffed with mozzarella and ham, covered in mild artisanal mustard sauce.',
+    esDesc: 'Pechuga rellena de jamón y mozzarella que se derrite, en una suave salsa de mostaza de la casa.',
+    enDesc: 'Chicken breast filled with ham and melting mozzarella, in a mild house mustard sauce.',
     price: '$14.50',
-    tag: 'Clásico',
+    tag: 'De la casa',
   },
 ];
 
+const TAG_EN: Record<string, string> = { 'Plato estrella': 'Signature dish', 'Para compartir': 'To share', 'Gourmet': 'Gourmet', 'De la casa': 'House classic' };
+
 const GALERIA_FOTOS = [
-  { url: '/images/galeria/restaurante/5.jpg',  alt: 'El Restaurante La Travesía', wide: true },
-  { url: '/images/galeria/restaurante/4.jpg',  alt: 'La Campiña — Vista Interior' },
-  { url: '/images/galeria/restaurante/3.jpg',  alt: 'El Kiosco — Techo de Paja' },
-  { url: '/images/galeria/restaurante/6.jpg',  alt: 'Ambiente de La Travesía' },
-  { url: '/images/galeria/restaurante/7.jpg',  alt: 'Rincón del Restaurante' },
-  { url: '/images/galeria/restaurante/8.jpg',  alt: 'Detalles del Lugar' },
-  { url: '/images/galeria/restaurante/2.jpg',  alt: 'La Travesía Campiña' },
+  { url: '/images/galeria/restaurante/5.jpg',  alt: 'Comedor interior de La Travesía', altEn: 'Indoor dining room', wide: true },
+  { url: '/images/galeria/restaurante/3.jpg',  alt: 'Kiosco con techo de paja', altEn: 'Thatched kiosk' },
+  { url: '/images/galeria/restaurante/4.jpg',  alt: 'Hamacas en el jardín', altEn: 'Hammocks in the garden' },
+  { url: '/images/galeria/restaurante/2.jpg',  alt: 'Comedor rústico', altEn: 'Rustic dining room' },
+  { url: '/images/galeria/restaurante/7.jpg',  alt: 'Camarones con arroz', altEn: 'Shrimp with rice' },
+  { url: '/images/galeria/restaurante/13.jpg', alt: 'Seco de chivo', altEn: 'Goat stew' },
+  { url: '/images/galeria/restaurante/14.jpg', alt: 'Trucha frita', altEn: 'Fried trout' },
+  { url: '/images/galeria/restaurante/15.jpg', alt: 'Caldo de gallina criolla', altEn: 'Free-range hen broth' },
+  { url: '/images/galeria/restaurante/1.jpg',  alt: 'Juegos para niños', altEn: "Kids' play area" },
 ];
 
 const DATA_BLOCKS = [
@@ -64,29 +68,29 @@ const DATA_BLOCKS = [
     icon: '📍',
     esTitle: 'Ubicación',
     enTitle: 'Location',
-    esText: 'Quingeo, Cuenca, Ecuador\nA 22 km del centro de la ciudad\n2.800 msnm — Camino a Gualaceo',
-    enText: 'Quingeo, Cuenca, Ecuador\n22 km from the city center\n2,800 m above sea level — Road to Gualaceo',
+    esText: 'Quingeo, Cuenca, Ecuador\nA 22 km del centro de la ciudad\nGoogle Maps: X3C9+R5W, Quingeo',
+    enText: 'Quingeo, Cuenca, Ecuador\n22 km from the city center\nGoogle Maps: X3C9+R5W, Quingeo',
   },
   {
     icon: '🕐',
     esTitle: 'Horario',
     enTitle: 'Hours',
-    esText: 'Lunes a Viernes: 8:00 am – 6:00 pm\nSábados y Domingos: 8:00 am – 7:00 pm\nFeriados: horario especial',
-    enText: 'Monday to Friday: 8:00 am – 6:00 pm\nSaturdays & Sundays: 8:00 am – 7:00 pm\nHolidays: special hours',
+    esText: 'Jueves a domingo: 9:00 – 18:00\nLunes a miércoles: cerrado\nComer aquí o para llevar',
+    enText: 'Thursday to Sunday: 9 am – 6 pm\nMonday to Wednesday: closed\nDine in or take away',
   },
   {
     icon: '📞',
     esTitle: 'Reservas',
     enTitle: 'Reservations',
-    esText: 'WhatsApp: +593 990 136 060\nInstagram: @la_travesia.cue\nFacebook: latravesiacampina.cue',
-    enText: 'WhatsApp: +593 990 136 060\nInstagram: @la_travesia.cue\nFacebook: latravesiacampina.cue',
+    esText: 'WhatsApp: 099 013 6060\nInstagram: @la_travesia.cue\nFacebook: latravesiacampina.cue',
+    enText: 'WhatsApp: 099 013 6060\nInstagram: @la_travesia.cue\nFacebook: latravesiacampina.cue',
   },
   {
     icon: '🍽️',
-    esTitle: 'Rango de Precios',
+    esTitle: 'Precios',
     enTitle: 'Price Range',
-    esText: 'Entradas: $1 – $3\nPlatos fuertes: $6 – $17.50\nPostres: $2.50 – $4.75\nBebidas: $0.75 – $10',
-    enText: 'Starters: $1 – $3\nMain courses: $6 – $17.50\nDesserts: $2.50 – $4.75\nDrinks: $0.75 – $10',
+    esText: 'Promedio: $5 – $15 por persona\nEntradas: $1 – $3\nPlatos fuertes: $6 – $24.50\nPostres: $2.50 – $4.75',
+    enText: 'Average: $5 – $15 per person\nStarters: $1 – $3\nMain courses: $6 – $24.50\nDesserts: $2.50 – $4.75',
   },
 ];
 
@@ -98,8 +102,8 @@ export default function RestauranteClient({ locale }: { locale: string }) {
 
   const whatsappUrl = 'https://wa.me/593990136060?text=' + encodeURIComponent(
     isEs
-      ? 'Hola, quiero reservar una mesa en La Travesía Campiña. ¿Hay disponibilidad?'
-      : 'Hello, I would like to reserve a table at La Travesía Campiña restaurant.'
+      ? '¡Hola! Quisiera reservar una mesa en La Travesía Campiña. ¿Tienen disponibilidad?'
+      : 'Hi! I would like to book a table at La Travesía Campiña. Do you have availability?'
   );
 
   return (
@@ -116,17 +120,17 @@ export default function RestauranteClient({ locale }: { locale: string }) {
           priority
         />
         <div className="relative z-20 text-center px-6 mt-16 max-w-4xl mx-auto">
-          <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-gold mb-6 animate-fade-in">
-            {isEs ? 'Quingeo · 2.800 msnm · Cuenca, Ecuador' : 'Country Restaurant'}
+          <p className="font-sans text-[11px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] text-gold-pale font-semibold [text-shadow:0_1px_10px_rgba(0,0,0,0.75)] mb-6 animate-fade-in">
+            {isEs ? 'Cocina de campo · Quingeo, Cuenca' : 'Country cooking · Quingeo, Cuenca'}
           </p>
-          <h1 className="font-playfair text-6xl md:text-8xl lg:text-9xl text-cream-warm drop-shadow-lg mb-6">
-            La Mesa
+          <h1 className="font-playfair text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-cream-warm drop-shadow-lg mb-6">
+            {isEs ? 'Restaurante' : 'Restaurant'}
           </h1>
           <div className="w-24 h-[1px] bg-gold mx-auto mb-8" />
-          <p className="font-cormorant text-xl md:text-2xl text-cream/90 italic font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="font-cormorant text-xl md:text-2xl text-cream/90 italic max-w-2xl mx-auto leading-relaxed font-medium">
             {isEs
-              ? 'Todo lo que come aquí se crió o creció en nuestra propia tierra, en Quingeo. Nada de intermediarios. Solo sabor de verdad.'
-              : 'Everything you eat here was raised or grown on our own land in Quingeo. No middlemen. Just real flavor.'}
+              ? 'Sabores de campo, recetas de familia y una mesa con vista a los Andes. Ven con hambre y sin apuro.'
+              : 'Country flavors, family recipes and a table with a view of the Andes. Come hungry and stay a while.'}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <a
@@ -135,13 +139,13 @@ export default function RestauranteClient({ locale }: { locale: string }) {
               rel="noopener noreferrer"
               className="px-8 py-3 bg-gold hover:bg-gold-light text-forest-dark font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300"
             >
-              {isEs ? 'Reservar Mesa' : 'Book a Table'}
+              {isEs ? 'Reservar mesa' : 'Book a table'}
             </a>
             <Link
               href={`/${locale}/menu`}
-              className="px-8 py-3 border border-cream/50 text-cream hover:border-gold hover:text-gold font-sans text-xs uppercase tracking-widest font-light transition-all duration-300"
+              className="px-8 py-3 border border-cream/70 text-cream hover:border-gold hover:text-gold font-sans text-xs uppercase tracking-widest font-semibold transition-all duration-300"
             >
-              {isEs ? 'Ver Menú Completo' : 'Full Menu'}
+              {isEs ? 'Ver el menú' : 'See the menu'}
             </Link>
           </div>
         </div>
@@ -154,38 +158,38 @@ export default function RestauranteClient({ locale }: { locale: string }) {
       {/* ── Intro & Data ─────────────────────────────── */}
       <section className="py-24 px-6 bg-cream">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[7fr_5fr] gap-12 lg:gap-16 items-start [&>*]:min-w-0">
 
             {/* Filosofía */}
-            <div className="lg:col-span-7">
+            <div>
               <span className="font-sans text-xs font-bold text-forest-mid uppercase tracking-[0.3em] mb-4 block">
-                {isEs ? 'Por qué somos diferentes' : 'Our Philosophy'}
+                {isEs ? 'Nuestra cocina' : 'Our kitchen'}
               </span>
               <h2 className="font-playfair text-4xl md:text-5xl text-forest-dark mb-8 leading-tight">
                 {isEs
-                  ? 'Aquí la comida sabe diferente. Y hay una razón.'
-                  : 'A kitchen born from the earth'}
+                  ? 'Aquí la comida sabe a campo. Y tiene una razón.'
+                  : 'Food that tastes of the countryside — for a reason.'}
               </h2>
               <div className="w-16 h-[1px] bg-gold mb-8" />
-              <p className="font-cormorant text-2xl md:text-3xl text-forest leading-relaxed font-light italic mb-8">
+              <p className="font-cormorant text-2xl md:text-3xl text-forest leading-relaxed italic mb-8 font-medium">
                 {isEs
-                  ? 'En La Travesía la carta cambia con lo que da la tierra. Esa mañana, esa semana. Sin congelados, sin traer de lejos.'
-                  : 'At La Travesía, what matters is not what the menu says — it is what the land said that morning.'}
+                  ? 'Lo esencial de nuestra cocina nace en la granja: lo criamos, lo sembramos y lo cosechamos nosotros mismos.'
+                  : 'The heart of our cooking comes from the farm: we raise it, plant it and harvest it ourselves.'}
               </p>
               <p className="font-sans text-sm text-forest-mid leading-loose">
                 {isEs
-                  ? 'El cuy que asamos se crió aquí, libre, comiendo pasto fresco. El caldo de gallina viene de la misma gallina criolla que anduvo suelta por el potrero. Las papas, el mote, los vegetales: todos de Quingeo, a 2.800 metros. Esa altura hace la diferencia, y usted lo va a notar.'
-                  : 'Every dish that reaches your table first passed through our farm. The guinea pig we roast was raised on fresh grass without overcrowding. The hen broth comes from the same free-range hen that walked freely through our pastures. The potatoes, hominy, vegetables — all harvested in Quingeo, at 2,800 meters, where flavor has another depth.'}
+                  ? 'El cuy crece en nuestra granja con pasto fresco. El caldo se hace con gallina criolla de casa. Las papas, el mote y las verduras vienen de nuestra huerta, a 2.800 metros de altura. Por eso los platos típicos saben como los de la abuela.'
+                  : 'Our cuy is raised on the farm with fresh grass. The broth is made with our own free-range hens. Potatoes, hominy and vegetables come from our garden, 2,800 meters up. That is why our traditional dishes taste just like grandma used to make.'}
               </p>
               <p className="font-sans text-sm text-forest-mid leading-loose mt-4">
                 {isEs
-                  ? 'Y para quien quiera algo más especial, también tenemos Filet Mignon, Cordon Bleu y pastas artesanales. Porque en La Travesía hay para todos los gustos, y todo sale bien hecho.'
-                  : 'We also offer fine dining — Filet Mignon, Cordon Bleu, artisanal pastas — because we believe that the countryside and elegance are not opposites. They are the same landscape seen from different angles.'}
+                  ? '¿Te provoca algo distinto? También tenemos Filet Mignon, Cordon Bleu, mariscos, pastas y un menú para los más pequeños. En La Travesía hay algo rico para cada gusto.'
+                  : 'In the mood for something different? We also serve Filet Mignon, Cordon Bleu, seafood, pasta and a kids menu. At La Travesía there is something delicious for everyone.'}
               </p>
             </div>
 
             {/* Data Blocks */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
+            <div className="flex flex-col gap-6">
               {DATA_BLOCKS.map((block, i) => (
                 <div key={i} className="border border-gold/20 bg-cream-warm p-6 rounded-sm">
                   <div className="flex items-center gap-3 mb-3">
@@ -211,14 +215,14 @@ export default function RestauranteClient({ locale }: { locale: string }) {
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { n: '+40', label: isEs ? 'platos en carta' : 'dishes on menu' },
-            { n: '8', label: isEs ? 'tipos de comida' : 'culinary categories' },
-            { n: '35 min', label: isEs ? 'desde el centro de Cuenca' : 'from Cuenca center' },
-            { n: '100%', label: isEs ? 'ingredientes de la propia granja' : 'own-farm ingredients' },
+            { n: isEs ? '4,8 ★' : '4.8 ★', label: isEs ? 'en Google Maps' : 'on Google Maps' },
+            { n: '35 min', label: isEs ? 'desde el centro de Cuenca' : "from downtown Cuenca" },
+            { n: 'Km 0', label: isEs ? 'cuy, gallina y huerta de casa' : 'our own cuy, hens and garden' },
           ].map((s, i) => (
             <div key={i} className="flex flex-col items-center gap-3">
               <span className="font-playfair text-4xl text-gold font-bold">{s.n}</span>
               <div className="w-6 h-[1px] bg-gold/40" />
-              <span className="font-sans text-[9px] uppercase tracking-widest text-cream/60">{s.label}</span>
+              <span className="font-sans text-[11px] uppercase tracking-widest text-cream/75">{s.label}</span>
             </div>
           ))}
         </div>
@@ -229,10 +233,10 @@ export default function RestauranteClient({ locale }: { locale: string }) {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="font-sans text-xs font-bold text-forest-mid uppercase tracking-[0.3em] mb-4 block">
-              {isEs ? 'Para que sepa qué pedir' : 'Must-try dishes'}
+              {isEs ? 'Si es tu primera vez' : 'First time here?'}
             </span>
             <h2 className="font-playfair text-4xl md:text-5xl text-forest-dark mb-6">
-              {isEs ? 'Los más pedidos' : 'La Mesa Specialties'}
+              {isEs ? 'Los más pedidos' : 'Our most-loved dishes'}
             </h2>
             <div className="w-16 h-[1px] bg-gold mx-auto" />
           </div>
@@ -243,33 +247,28 @@ export default function RestauranteClient({ locale }: { locale: string }) {
                 key={dish.id}
                 className="group bg-cream border border-gold/15 hover:border-gold/50 rounded-sm p-7 flex flex-col gap-4 transition-all duration-300 hover:shadow-lg"
               >
-                {/* Emoji + badge */}
-                <div className="flex items-start justify-between">
-                  <span className="text-4xl">{dish.emoji}</span>
-                  <span className="font-sans text-[8px] uppercase tracking-widest text-gold border border-gold/40 px-2 py-0.5 mt-1">
-                    {dish.tag}
+                {/* Badge (se quitaron los emojis: la huella 🐾 junto al cuy no ayudaba al plato) */}
+                <div className="flex items-start">
+                  <span className="font-sans text-[11px] font-semibold uppercase tracking-widest text-gold-dark border border-gold-dark/40 px-2 py-0.5">
+                    {isEs ? dish.tag : (TAG_EN[dish.tag] ?? dish.tag)}
                   </span>
                 </div>
 
                 <div className="w-8 h-[1px] bg-gold/40 group-hover:w-14 transition-all duration-500" />
 
-                <h3 className="font-playfair text-xl text-forest-dark leading-snug group-hover:text-gold transition-colors duration-300">
+                <h3 className="font-playfair text-xl text-forest-dark leading-snug group-hover:text-gold-dark transition-colors duration-300">
                   {isEs ? dish.esName : dish.enName}
                 </h3>
 
-                <p className="font-sans text-xs text-forest-mid leading-relaxed flex-1">
+                <p className="font-sans text-sm text-forest-mid leading-relaxed flex-1">
                   {isEs ? dish.esDesc : dish.enDesc}
                 </p>
 
-                <div className="flex items-center justify-between pt-2 border-t border-forest-mid/10">
-                  {dish.price ? (
+                {dish.price && (
+                  <div className="flex items-center justify-between pt-2 border-t border-forest-mid/10">
                     <span className="font-playfair text-2xl text-forest-dark font-semibold">{dish.price}</span>
-                  ) : (
-                    <span className="font-sans text-[10px] uppercase tracking-widest text-forest-mid/60">
-                      {isEs ? 'Precio según tamaño' : 'Price by size'}
-                    </span>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -277,9 +276,9 @@ export default function RestauranteClient({ locale }: { locale: string }) {
           <div className="text-center mt-14">
             <Link
               href={`/${locale}/menu`}
-              className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-[0.2em] text-forest-dark border border-forest-mid hover:border-gold hover:text-gold px-10 py-4 transition-all duration-500"
+              className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-[0.2em] text-forest-dark font-semibold border border-forest-mid hover:border-gold-dark hover:text-gold-dark px-10 py-4 transition-all duration-500"
             >
-              {isEs ? 'Ver Carta Completa' : 'View Full Menu'}
+              {isEs ? 'Ver la carta completa' : 'See the full menu'}
             </Link>
           </div>
         </div>
@@ -290,10 +289,10 @@ export default function RestauranteClient({ locale }: { locale: string }) {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <span className="font-sans text-xs font-bold text-forest-mid uppercase tracking-[0.3em] mb-4 block">
-              {isEs ? 'Así se ve La Mesa' : 'Restaurant Gallery'}
+              {isEs ? 'Así es el restaurante' : 'Inside the restaurant'}
             </span>
             <h2 className="font-playfair text-4xl md:text-5xl text-forest-dark mb-6">
-              {isEs ? 'Platos y rincones del restaurante' : 'Every dish, a story'}
+              {isEs ? 'Platos y rincones del restaurante' : 'Dishes and corners of the restaurant'}
             </h2>
             <div className="w-16 h-[1px] bg-gold mx-auto" />
           </div>
@@ -303,20 +302,20 @@ export default function RestauranteClient({ locale }: { locale: string }) {
             {GALERIA_FOTOS.map((foto, i) => (
               <div
                 key={i}
-                className={`relative overflow-hidden rounded-sm cursor-pointer group ${foto.wide ? 'col-span-2 row-span-2' : ''} aspect-square`}
+                className={`relative overflow-hidden rounded-sm cursor-pointer group bg-beige ${foto.wide ? 'col-span-2 row-span-2' : ''} aspect-square`}
                 onClick={() => setLightbox(foto.url)}
               >
                 <Image
                   src={foto.url}
-                  alt={foto.alt}
+                  alt={isEs ? foto.alt : foto.altEn}
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   loading={i < 2 ? 'eager' : 'lazy'}
                 />
                 <div className="absolute inset-0 bg-forest-dark/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="font-sans text-[10px] text-cream uppercase tracking-widest translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    {foto.alt}
+                  <span className="font-sans text-[11px] text-cream uppercase tracking-widest translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    {isEs ? foto.alt : foto.altEn}
                   </span>
                 </div>
               </div>
@@ -326,9 +325,9 @@ export default function RestauranteClient({ locale }: { locale: string }) {
           <div className="text-center mt-12">
             <Link
               href={`/${locale}/galeria`}
-              className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-[0.2em] text-forest-dark border border-forest-mid hover:border-gold hover:text-gold px-10 py-4 transition-all duration-500"
+              className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-[0.2em] text-forest-dark font-semibold border border-forest-mid hover:border-gold-dark hover:text-gold-dark px-10 py-4 transition-all duration-500"
             >
-              {isEs ? 'Ver Galería Completa' : 'View Full Gallery'}
+              {isEs ? 'Ver toda la galería' : 'See the full gallery'}
             </Link>
           </div>
         </div>
@@ -338,13 +337,13 @@ export default function RestauranteClient({ locale }: { locale: string }) {
       <section className="py-28 bg-forest-dark text-cream border-t border-gold/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-playfair text-4xl md:text-6xl text-cream-warm mb-8">
-            {isEs ? '¿Cuándo nos visita?' : 'When will you visit us?'}
+            {isEs ? '¿Cuándo nos visitas?' : 'When are you coming?'}
           </h2>
           <div className="w-[1px] h-16 bg-gold mx-auto mb-10" />
-          <p className="font-cormorant text-2xl md:text-3xl text-beige max-w-2xl mx-auto italic leading-relaxed mb-12 font-light">
+          <p className="font-cormorant text-2xl md:text-3xl text-beige max-w-2xl mx-auto italic leading-relaxed mb-12 font-medium">
             {isEs
-              ? 'Venga y siéntese con nosotros. Aquí no hay apuro. Reserve su mesa por WhatsApp y le esperamos con el plato listo.'
-              : 'Come and sit with us. No rush here. Book your table on WhatsApp and we will be waiting.'}
+              ? 'Ven a sentarte con nosotros, aquí no hay apuro. Reserva tu mesa por WhatsApp y te esperamos con todo listo.'
+              : 'Come sit with us — there is no rush here. Book your table on WhatsApp and we will have everything ready.'}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -360,9 +359,9 @@ export default function RestauranteClient({ locale }: { locale: string }) {
             </a>
             <Link
               href={`/${locale}/menu`}
-              className="inline-flex items-center gap-2 px-10 py-5 border border-cream/30 text-cream hover:border-gold hover:text-gold font-sans text-xs uppercase tracking-widest font-light transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-5 border border-cream/60 text-cream hover:border-gold hover:text-gold font-sans text-xs uppercase tracking-widest font-semibold transition-all duration-300"
             >
-              {isEs ? 'Explorar el Menú' : 'Explore the Menu'}
+              {isEs ? 'Ver el menú' : 'See the menu'}
             </Link>
           </div>
         </div>

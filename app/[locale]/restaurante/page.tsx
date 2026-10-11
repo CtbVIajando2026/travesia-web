@@ -3,15 +3,13 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import RestauranteClient from '@/components/restaurante/RestauranteClient';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const isEs = locale === 'es';
-  return {
-    title: isEs ? 'El Restaurante · La Mesa | La Travesía' : 'The Restaurant · La Mesa | La Travesía',
-    description: isEs
-      ? 'Restaurante de campo en Quingeo, Cuenca. Gastronomía andina y gourmet con ingredientes 100% de nuestra granja. Cuy asado, Filet Mignon, Cordon Bleu y más.'
-      : 'Country restaurant in Quingeo, Cuenca. Andean and gourmet cuisine with 100% farm-fresh ingredients. Roasted guinea pig, Filet Mignon, Cordon Bleu and more.',
-  };
+  return pageMetadata(locale, '/restaurante',
+    { title: 'Restaurante de campo', description: 'Cocina andina y gourmet con ingredientes de nuestra propia granja en Quingeo. Cuy asado, Filet Mignon, Cordon Bleu y más.' },
+    { title: 'Country Restaurant', description: 'Andean and gourmet cuisine with ingredients from our own farm in Quingeo. Roasted cuy, Filet Mignon, Cordon Bleu and more.' },
+  );
 }
 
 interface PageProps {

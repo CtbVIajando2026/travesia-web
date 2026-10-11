@@ -10,8 +10,8 @@ export default function HospedajeClient({ locale }: { locale: string }) {
 
   // WhatsApp link configuration
   const whatsappMsg = locale === 'es' 
-    ? "Hola, me gustaría consultar disponibilidad para hospedarme en La Travesía Campiña." 
-    : "Hello, I would like to check availability for lodging at La Travesía Campiña.";
+    ? "¡Hola! Quisiera consultar disponibilidad para hospedarme en La Travesía Campiña." 
+    : "Hi! I would like to check room availability at La Travesía Campiña.";
   const whatsappUrl = "https://wa.me/593990136060?text=" + encodeURIComponent(whatsappMsg);
 
   return (
@@ -25,16 +25,16 @@ export default function HospedajeClient({ locale }: { locale: string }) {
           <div className="absolute inset-0 bg-forest-dark/45 z-10"></div>
           <Image
             src="/images/galeria/hospedaje/1.jpg"
-            alt="Habitación panorámica — El Refugio La Travesía"
+            alt="Habitación con vista panorámica — Hospedaje La Travesía"
             fill
             priority
             className="object-cover"
           />
           <div className="relative z-20 text-center px-6 mt-20 max-w-4xl mx-auto">
-            <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-gold mb-6">
-              {locale === 'es' ? 'Hospedaje & Refugio Andino' : 'Andean Lodging & Refuge'}
+            <p className="font-sans text-[11px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] text-gold-pale font-semibold [text-shadow:0_1px_10px_rgba(0,0,0,0.75)] mb-6">
+              {locale === 'es' ? 'Habitaciones en el campo · Quingeo' : 'Countryside rooms · Quingeo'}
             </p>
-            <h1 className="font-playfair text-6xl md:text-8xl lg:text-9xl text-cream-warm drop-shadow-lg mb-6">
+            <h1 className="font-playfair text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-cream-warm drop-shadow-lg mb-6">
               {t('title')}
             </h1>
             <div className="w-24 h-[1px] bg-gold mx-auto mb-8" />
@@ -48,7 +48,7 @@ export default function HospedajeClient({ locale }: { locale: string }) {
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-gold hover:bg-gold-light text-forest-dark font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300"
               >
-                {locale === 'es' ? 'Consultar Disponibilidad' : 'Check Availability'}
+                {locale === 'es' ? 'Ver disponibilidad' : 'Check availability'}
               </a>
             </div>
           </div>
@@ -61,12 +61,12 @@ export default function HospedajeClient({ locale }: { locale: string }) {
               { icon: '🌿', es: 'Desayuno incluido', en: 'Breakfast included' },
               { icon: '🏔️', es: 'Vistas a la montaña', en: 'Mountain views' },
               { icon: '🚗', es: 'Parqueo privado gratuito', en: 'Free private parking' },
-              { icon: '📶', es: 'Wi-Fi de alta velocidad', en: 'High-speed Wi-Fi' },
+              { icon: '📶', es: 'Wi-Fi gratis', en: 'Free Wi-Fi' },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center gap-3">
                 <span className="text-3xl">{item.icon}</span>
                 <div className="w-6 h-[1px] bg-gold/40" />
-                <p className="font-sans text-[10px] uppercase tracking-widest text-cream/70">
+                <p className="font-sans text-[11px] uppercase tracking-widest text-cream/70">
                   {locale === 'es' ? item.es : item.en}
                 </p>
               </div>
@@ -76,25 +76,25 @@ export default function HospedajeClient({ locale }: { locale: string }) {
 
         {/* Intro & Price Section */}
         <section className="py-24 px-6 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[7fr_5fr] gap-12 lg:gap-16 items-start [&>*]:min-w-0">
             
-            <div className="lg:col-span-7 flex flex-col gap-8">
+            <div className="flex flex-col gap-8">
               <h2 className="font-sans text-xs font-bold text-forest-mid uppercase tracking-[0.3em] mb-2">
-                {locale === 'es' ? 'La Estadía' : 'The Stay'}
+                {locale === 'es' ? 'Tu estadía' : 'Your stay'}
               </h2>
               <div className="w-16 h-[1px] bg-gold"></div>
-              <p className="font-cormorant text-3xl md:text-4xl text-forest leading-relaxed font-light italic">
+              <p className="font-cormorant text-3xl md:text-4xl text-forest leading-relaxed italic font-medium">
                 {t('description')}
               </p>
             </div>
 
-            <div className="lg:col-span-5">
+            <div>
               <div className="bg-forest-dark text-cream border border-gold/40 p-8 md:p-10 rounded-lg shadow-xl flex flex-col items-center text-center">
                 <span className="font-sans text-xs uppercase tracking-widest text-gold mb-3 font-semibold">
-                  {locale === 'es' ? 'Reserva tu estancia' : 'Book Your Stay'}
+                  {locale === 'es' ? 'Reserva tu estadía' : 'Book your stay'}
                 </span>
-                <p className="font-cormorant text-xl text-cream-warm italic mb-8 max-w-xs leading-relaxed">
-                  {locale === 'es' ? 'Consulta disponibilidad y tarifas por WhatsApp.' : 'Check availability and rates via WhatsApp.'}
+                <p className="font-cormorant text-[1.35rem] md:text-2xl text-cream-warm italic mb-8 max-w-xs leading-relaxed font-medium">
+                  {locale === 'es' ? 'Pregúntanos por fechas y tarifas por WhatsApp. Te respondemos enseguida.' : 'Ask us about dates and rates on WhatsApp. We reply quickly.'}
                 </p>
                 <div className="w-full border-t border-forest-mid/30 my-6"></div>
                 <a
@@ -146,7 +146,7 @@ export default function HospedajeClient({ locale }: { locale: string }) {
                     {t('roomDoubleDesc')}
                   </p>
                 </div>
-                <div className="pt-6 border-t border-forest-mid/10 text-xs font-semibold text-gold uppercase tracking-widest">
+                <div className="pt-6 border-t border-forest-mid/10 text-xs font-semibold text-gold-dark uppercase tracking-widest">
                   {locale === 'es' ? 'Cama Matrimonial · Vista al Jardín' : 'Double Bed · Garden View'}
                 </div>
               </div>
@@ -166,14 +166,14 @@ export default function HospedajeClient({ locale }: { locale: string }) {
                     {t('roomTripleDesc')}
                   </p>
                 </div>
-                <div className="pt-6 border-t border-forest-mid/10 text-xs font-semibold text-gold uppercase tracking-widest">
+                <div className="pt-6 border-t border-forest-mid/10 text-xs font-semibold text-gold-dark uppercase tracking-widest">
                   {locale === 'es' ? '3 Camas · Espacio Familiar' : '3 Beds · Family Space'}
                 </div>
               </div>
 
               {/* Suite Premium */}
               <div className="bg-cream border border-gold-light p-8 flex flex-col justify-between rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-gold text-forest-dark text-[9px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl">
+                <div className="absolute top-0 right-0 bg-gold text-forest-dark text-[11px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl">
                   Premium
                 </div>
                 <div>
@@ -189,7 +189,7 @@ export default function HospedajeClient({ locale }: { locale: string }) {
                     {t('roomSuiteDesc')}
                   </p>
                 </div>
-                <div className="pt-6 border-t border-forest-mid/10 text-xs font-semibold text-gold uppercase tracking-widest">
+                <div className="pt-6 border-t border-forest-mid/10 text-xs font-semibold text-gold-dark uppercase tracking-widest">
                   {locale === 'es' ? 'Chimenea · Terraza Privada · Vista Panorámica' : 'Fireplace · Private Terrace · Panoramic View'}
                 </div>
               </div>
@@ -316,24 +316,24 @@ export default function HospedajeClient({ locale }: { locale: string }) {
                 {locale === 'es' ? 'El Espacio' : 'The Space'}
               </span>
               <h2 className="font-playfair text-4xl md:text-5xl text-forest-dark mb-6">
-                {locale === 'es' ? 'Vive el refugio andino' : 'Experience the Andean refuge'}
+                {locale === 'es' ? 'Así es quedarse aquí' : 'What staying here feels like'}
               </h2>
               <div className="w-16 h-[1px] bg-gold mx-auto mb-6"></div>
-              <p className="font-cormorant text-xl text-forest italic max-w-xl mx-auto">
+              <p className="font-cormorant text-[1.35rem] md:text-2xl text-forest italic max-w-xl mx-auto font-medium">
                 {locale === 'es'
-                  ? 'Rodeado de montañas, aire puro y el silencio del campo azuayo.'
-                  : 'Surrounded by mountains, fresh air and the silence of the Azuay countryside.'}
+                  ? 'Montañas alrededor, aire puro y esa calma del campo azuayo que te hace bajar el ritmo.'
+                  : 'Mountains all around, fresh air and the calm of the Azuay countryside that slows you down.'}
               </p>
             </div>
 
             {/* Photo Grid — fotos reales del hospedaje */}
             {(() => {
               const fotos = [
-                { src: '/images/galeria/hospedaje/9.jpg',  alt: locale === 'es' ? 'Suite con balcón y vista al campo' : 'Suite with balcony and field view', wide: true },
-                { src: '/images/galeria/hospedaje/13.jpg', alt: locale === 'es' ? 'Balcón de hierro forjado con vista' : 'Wrought iron balcony with view' },
+                { src: '/images/galeria/hospedaje/9.jpg',  alt: locale === 'es' ? 'Habitación con dos camas y salida al balcón' : 'Twin room with balcony access', wide: true },
+                { src: '/images/galeria/hospedaje/13.jpg', alt: locale === 'es' ? 'Ventanales con vista a la montaña' : 'Large windows with mountain views' },
                 { src: '/images/galeria/hospedaje/6.jpg',  alt: locale === 'es' ? 'Habitación familiar con litera' : 'Family room with bunk bed' },
-                { src: '/images/galeria/hospedaje/4.jpg',  alt: locale === 'es' ? 'Baño privado con flores' : 'Private bathroom with flowers' },
-                { src: '/images/galeria/hospedaje/15.jpg', alt: locale === 'es' ? 'Habitación con vista al campo' : 'Room with countryside view' },
+                { src: '/images/galeria/hospedaje/4.jpg',  alt: locale === 'es' ? 'Baño privado en cada habitación' : 'Private bathroom in every room' },
+                { src: '/images/galeria/hospedaje/15.jpg', alt: locale === 'es' ? 'Habitación con balcón' : 'Room with balcony' },
               ];
               return (
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -341,7 +341,7 @@ export default function HospedajeClient({ locale }: { locale: string }) {
                     <div key={i} className={`relative overflow-hidden rounded-sm group ${f.wide ? 'col-span-2' : ''}`} style={{ aspectRatio: f.wide ? '16/9' : '1/1' }}>
                       <Image src={f.src} alt={f.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
-                        <span className="font-sans text-[10px] text-cream uppercase tracking-widest font-semibold">{f.alt}</span>
+                        <span className="font-sans text-[11px] text-cream uppercase tracking-widest font-semibold">{f.alt}</span>
                       </div>
                     </div>
                   ))}
@@ -358,7 +358,7 @@ export default function HospedajeClient({ locale }: { locale: string }) {
               {t('bookingTitle')}
             </h2>
             <div className="w-[1px] h-16 bg-gold mx-auto mb-10"></div>
-            <p className="font-cormorant text-2xl md:text-3xl text-beige max-w-2xl mx-auto italic leading-relaxed mb-12 font-light">
+            <p className="font-cormorant text-2xl md:text-3xl text-beige max-w-2xl mx-auto italic leading-relaxed mb-12 font-medium">
               {t('bookingText')}
             </p>
             <a 

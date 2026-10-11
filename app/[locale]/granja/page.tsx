@@ -8,15 +8,13 @@ import ManejoBlock from '@/components/granja/ManejoBlock';
 import GranjaGaleria from '@/components/granja/GranjaGaleria';
 
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const isEs = locale === 'es';
-  return {
-    title: isEs ? 'Nuestra Granja Sostenible | La Travesía' : 'Our Sustainable Farm | La Travesía',
-    description: isEs 
-      ? 'Conoce nuestro modelo agroecológico. Crianza libre, agricultura orgánica, compostaje y un ciclo cerrado de vida sustentable en Quingeo.' 
-      : 'Learn about our agroecological model. Free-range farming, organic agriculture, composting, and a closed loop of sustainable life in Quingeo.',
-  };
+  return pageMetadata(locale, '/granja',
+    { title: 'Nuestra granja', description: 'Animales con espacio y aire libre, huerta sin pesticidas y abono orgánico hecho en casa. Conoce la granja de La Travesía en Quingeo.' },
+    { title: 'Our Farm', description: 'Animals with space and fresh air, a pesticide-free garden and homemade organic compost. Visit the La Travesía farm in Quingeo.' },
+  );
 }
 
 interface PageProps {
@@ -46,17 +44,17 @@ export default function GranjaPage({ params: { locale } }: PageProps) {
             priority
           />
           <div className="relative z-20 text-center px-6 mt-16 max-w-4xl mx-auto">
-            <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-gold mb-6">
-              {locale === 'es' ? 'La Granja · Quingeo, Ecuador' : 'Agroecological Farm'}
+            <p className="font-sans text-[11px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] text-gold-pale font-semibold [text-shadow:0_1px_10px_rgba(0,0,0,0.75)] mb-6">
+              {locale === 'es' ? 'Granja familiar · Quingeo, Ecuador' : 'Family farm · Quingeo, Ecuador'}
             </p>
             <h1 className="font-playfair text-6xl md:text-8xl text-cream-warm drop-shadow-lg mb-6">
-              {locale === 'es' ? 'El Origen' : 'The Origin'}
+              {locale === 'es' ? 'La Granja' : 'The Farm'}
             </h1>
             <div className="w-24 h-[1px] bg-gold mx-auto mb-8" />
-            <p className="font-cormorant text-xl md:text-2xl text-cream/90 italic font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="font-cormorant text-xl md:text-2xl text-cream/90 italic max-w-2xl mx-auto leading-relaxed font-medium">
               {locale === 'es'
-                ? 'Aquí se cría el cuy, se siembra la papa y crece la huerta. Todo lo que llega a su plato empezó en esta tierra.'
-                : 'This is where every dish begins. Organic crops, free-range breeding and a living cycle that closes at your table.'}
+                ? 'Aquí crecen nuestros cuyes y gallinas, se siembra la papa y florece la huerta. Cuando vengas a almorzar, pídenos un recorrido y te presentamos a todos los animales de la granja.'
+                : 'This is where our cuy and hens grow, potatoes are planted and the garden thrives. When you come for lunch, ask us for a tour and we will introduce you to all the farm animals.'}
             </p>
           </div>
         </section>
@@ -66,28 +64,24 @@ export default function GranjaPage({ params: { locale } }: PageProps) {
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {[
               {
-                icon: '🐾',
-                es: { title: 'Los Animales', lines: ['Cuyes · Cerdos · Gallinas', 'Sueltos, sin apretarse, comiendo bien', 'Sin hormonas ni antibióticos, de ley'] },
-                en: { title: 'Livestock', lines: ['Guinea pigs · Pigs · Hens', 'Free-range, natural rearing', 'No hormones or antibiotics'] },
+                es: { title: 'Los animales', lines: ['Cuyes · Cerdos · Gallinas', 'Con espacio, aire libre y buena comida', 'Criados sin hormonas ni antibióticos'] },
+                en: { title: 'The animals', lines: ['Guinea pigs · Pigs · Hens', 'Plenty of space, fresh air and good food', 'Raised without hormones or antibiotics'] },
               },
               {
-                icon: '🌱',
-                es: { title: 'La Huerta', lines: ['Papas · Mote · Habas · Verduras', 'Lo que da la temporada, recién cortado', 'Sin pesticidas, como debe ser'] },
-                en: { title: 'Organic Garden', lines: ['Potatoes · Hominy · Fava beans', 'Seasonal vegetables', 'Pesticide-free crops'] },
+                es: { title: 'La huerta', lines: ['Papas · Mote · Habas · Verduras', 'Lo que da cada temporada, recién cosechado', 'Cultivada sin pesticidas'] },
+                en: { title: 'The garden', lines: ['Potatoes · Hominy · Fava beans · Vegetables', 'Whatever each season brings, freshly harvested', 'Grown without pesticides'] },
               },
               {
-                icon: '♻️',
-                es: { title: 'Todo en ciclo', lines: ['Sobras → Compost', 'Compost → Tierra → Cultivos', 'Cultivos → Animales → Su plato'] },
-                en: { title: 'Closed Loop', lines: ['Waste → Compost', 'Compost → Soil → Crops', 'Crops → Animals → Table'] },
+                es: { title: 'Cultivo natural', lines: ['Abono orgánico hecho en casa', 'Sin químicos ni pesticidas', 'Sembramos según la temporada'] },
+                en: { title: 'Natural farming', lines: ['Homemade organic compost', 'No chemicals or pesticides', 'Planted by the season'] },
               },
               {
-                icon: '📍',
                 es: { title: '¿Dónde estamos?', lines: ['Quingeo, Cuenca · Ecuador', '2.800 m de altura', 'San Pedro de Quingeo'] },
-                en: { title: 'Location', lines: ['Quingeo, Cuenca · Ecuador', '2,800 m above sea level', 'San Pedro de Quingeo'] },
+                en: { title: 'Where we are', lines: ['Quingeo, Cuenca · Ecuador', '2,800 m above sea level', 'San Pedro de Quingeo'] },
               },
             ].map((block, i) => (
               <div key={i} className="flex flex-col gap-4">
-                <span className="text-3xl">{block.icon}</span>
+                <span className="font-playfair italic text-3xl text-gold">0{i + 1}</span>
                 <h3 className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-gold">
                   {locale === 'es' ? block.es.title : block.en.title}
                 </h3>

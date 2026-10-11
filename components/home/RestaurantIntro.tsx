@@ -10,20 +10,20 @@ export default function RestaurantIntro({ locale }: { locale?: string }) {
     <section className="py-32 bg-cream">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <span className="font-sans text-xs font-bold text-forest-mid uppercase tracking-[0.3em] mb-6 block">
-          {loc === 'es' ? 'Restaurante de Campo' : 'Country Restaurant'}
+          {loc === 'es' ? 'Restaurante de campo' : 'Country restaurant'}
         </span>
         <h2 className="font-playfair text-5xl md:text-6xl text-forest-dark mb-10">
           {t('title')}
         </h2>
         <div className="w-[1px] h-16 bg-gold mx-auto mb-10"></div>
-        <p className="font-cormorant text-3xl md:text-4xl text-forest italic leading-relaxed font-light mb-14">
+        <p className="font-cormorant text-3xl md:text-4xl text-forest italic leading-relaxed mb-14 font-medium">
           {t('description')}
         </p>
         <Link
           href={`/${loc}/restaurante`}
-          className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-[0.2em] text-forest-dark border border-forest-mid hover:border-gold hover:text-gold px-10 py-4 transition-all duration-500"
+          className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-[0.2em] text-forest-dark border border-forest-mid hover:border-gold-dark hover:text-gold-dark px-10 py-4 transition-all duration-500"
         >
-          {loc === 'es' ? 'Conocer el Restaurante' : 'Discover the Restaurant'}
+          {loc === 'es' ? 'Conoce el restaurante' : 'Discover the restaurant'}
         </Link>
       </div>
     </section>

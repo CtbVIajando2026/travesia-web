@@ -8,37 +8,37 @@ const FEATURED = [
     id: 'cuy',
     emoji: '🐾',
     esName: 'Cuy Asado',
-    enName: 'Traditional Roasted Guinea Pig',
-    esDesc: 'Papas doradas, arroz, mote y ají de la huerta.',
-    enDesc: 'Golden potatoes, rice, hominy and garden hot sauce.',
-    tag: 'Ícono',
+    enName: 'Roasted Cuy (Guinea Pig)',
+    esDesc: 'El plato estrella, criado en nuestra granja. Con papas doradas, mote y ají de la huerta.',
+    enDesc: 'Our signature dish, raised on our farm. With golden potatoes, hominy and garden chili sauce.',
+    tag: 'Plato estrella', tagEn: 'Signature dish',
   },
   {
     id: 'mix',
     emoji: '🍖',
     esName: 'Mix Tres Carnes',
     enName: 'Three Meat Mix',
-    esDesc: 'Moro de lenteja, lomo fino, pollo y cerdo a la parrilla.',
-    enDesc: 'Lentil rice, tenderloin, chicken and grilled pork.',
-    tag: 'Especialidad',
+    esDesc: 'Lomo fino, pollo y cerdo a la parrilla con moro de lenteja. Para los de buen diente.',
+    enDesc: 'Grilled tenderloin, chicken and pork with lentil rice. For big appetites.',
+    tag: 'Para compartir', tagEn: 'To share',
   },
   {
     id: 'filet',
     emoji: '🥩',
     esName: 'Filet Mignon',
     enName: 'Filet Mignon',
-    esDesc: 'Salsa de champiñones al vino tinto y puré artesanal.',
-    enDesc: 'Mushroom red wine sauce and artisanal mashed potatoes.',
-    tag: 'Premium',
+    esDesc: 'Jugoso, en salsa de champiñones al vino tinto con puré de la casa.',
+    enDesc: 'Juicy, in a mushroom and red wine sauce with house mashed potatoes.',
+    tag: 'Gourmet', tagEn: 'Gourmet',
   },
   {
     id: 'cordon',
     emoji: '🍗',
     esName: 'Cordon Bleu',
     enName: 'Cordon Bleu',
-    esDesc: 'Pechuga rellena de queso mozzarella y jamón.',
-    enDesc: 'Chicken breast stuffed with mozzarella and ham.',
-    tag: 'Clásico',
+    esDesc: 'Pechuga rellena de jamón y mozzarella que se derrite, en salsa de mostaza.',
+    enDesc: 'Chicken breast filled with ham and melting mozzarella, in a mustard sauce.',
+    tag: 'De la casa', tagEn: 'House classic',
   },
 ];
 
@@ -70,15 +70,15 @@ export default function MenuPreview() {
               style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="flex items-start justify-between">
-                <span className="font-sans text-[10px] tracking-widest uppercase text-gold border border-gold/40 px-2 py-1 rounded-sm">
-                  {item.tag}
+                <span className="font-sans text-[11px] font-semibold tracking-widest uppercase text-gold-dark border border-gold-dark/40 px-2 py-1 rounded-sm">
+                  {locale === 'es' ? item.tag : item.tagEn}
                 </span>
               </div>
               <div className="w-8 h-[1px] bg-gold/40 group-hover:w-14 transition-all duration-500" />
-              <h3 className="font-playfair text-xl text-forest-dark group-hover:text-gold transition-colors duration-300">
+              <h3 className="font-playfair text-xl text-forest-dark group-hover:text-gold-dark transition-colors duration-300">
                 {locale === 'es' ? item.esName : item.enName}
               </h3>
-              <p className="font-sans text-xs text-forest-mid leading-relaxed flex-1">
+              <p className="font-sans text-sm text-forest-mid leading-relaxed flex-1">
                 {locale === 'es' ? item.esDesc : item.enDesc}
               </p>
             </div>
@@ -89,7 +89,7 @@ export default function MenuPreview() {
         <div className="mt-16 text-center">
           <Link
             href={`/${locale}/menu`}
-            className="inline-flex items-center justify-center px-10 py-4 font-sans font-light text-xs tracking-[0.2em] text-forest-dark border border-forest-mid hover:border-gold hover:text-gold transition-colors duration-300 uppercase"
+            className="inline-flex items-center justify-center px-10 py-4 font-sans font-semibold text-xs tracking-[0.2em] text-forest-dark border border-forest-mid hover:border-gold-dark hover:text-gold-dark transition-colors duration-300 uppercase"
           >
             {t('seeFullMenu')}
           </Link>

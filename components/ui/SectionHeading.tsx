@@ -11,7 +11,7 @@ export default function SectionHeading({ title, subtitle, className = '', light 
   return (
     <div className={`text-center ${className}`}>
       {subtitle && (
-        <span className={`block font-cormorant text-xl md:text-2xl italic mb-4 ${light ? 'text-beige' : 'text-forest-mid'}`}>
+        <span className={`block font-cormorant font-medium text-xl md:text-2xl italic mb-4 ${light ? 'text-beige' : 'text-forest'}`}>
           {subtitle}
         </span>
       )}

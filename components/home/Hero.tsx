@@ -6,10 +6,10 @@ import Link from 'next/link';
 
 type Panel = 'restaurant' | 'farm' | 'lodging';
 
-const PANELS: { id: Panel; img: string; titleKey: string; actionKey: string; href: string; priority: boolean }[] = [
-  { id: 'restaurant', img: '/images/galeria/restaurante/4.jpg', titleKey: 'restaurantTitle', actionKey: 'restaurantAction', href: 'restaurante', priority: true },
-  { id: 'farm',       img: '/images/galeria/granja/3.jpg',      titleKey: 'farmTitle',       actionKey: 'farmAction',       href: 'granja',     priority: false },
-  { id: 'lodging',    img: '/images/galeria/hospedaje/9.jpg',   titleKey: 'lodgingTitle',    actionKey: 'lodgingAction',    href: 'hospedaje',  priority: false },
+const PANELS: { id: Panel; img: string; titleKey: string; actionKey: string; href: string }[] = [
+  { id: 'restaurant', img: '/images/galeria/restaurante/4.jpg', titleKey: 'restaurantTitle', actionKey: 'restaurantAction', href: 'restaurante', },
+  { id: 'farm',       img: '/images/galeria/granja/3.jpg',      titleKey: 'farmTitle',       actionKey: 'farmAction',       href: 'granja',     },
+  { id: 'lodging',    img: '/images/galeria/hospedaje/9.jpg',   titleKey: 'lodgingTitle',    actionKey: 'lodgingAction',    href: 'hospedaje',  },
 ];
 
 export default function Hero() {
@@ -18,13 +18,13 @@ export default function Hero() {
   const [hovered, setHovered] = useState<Panel | null>(null);
 
   return (
-    <section className="relative h-screen min-h-[650px] w-full bg-forest-dark flex flex-col md:flex-row overflow-hidden">
-      {/* Tagline central */}
-      <div className="absolute top-24 md:top-32 left-0 w-full z-20 text-center px-4 pointer-events-none">
-        <h1 className="font-playfair text-3xl md:text-5xl lg:text-6xl text-cream-warm drop-shadow-md">
+    <section className="relative min-h-[100svh] md:h-screen md:min-h-[650px] w-full bg-forest-dark flex flex-col md:flex-row overflow-hidden">
+      {/* Tagline: en móvil va en su propio bloque (antes se montaba sobre el primer panel); en desktop flota arriba */}
+      <div className="relative md:absolute md:top-32 left-0 w-full z-20 text-center px-6 pt-28 pb-8 md:p-0 pointer-events-none">
+        <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-cream-warm drop-shadow-md">
           {t('title')}
         </h1>
-        <p className="font-cormorant text-lg md:text-2xl text-beige mt-4 max-w-2xl mx-auto italic drop-shadow">
+        <p className="font-cormorant text-xl md:text-2xl text-beige mt-3 md:mt-4 max-w-2xl mx-auto italic drop-shadow font-medium">
           {t('subtitle')}
         </p>
       </div>
@@ -37,7 +37,7 @@ export default function Hero() {
           <div
             key={panel.id}
             className={[
-              'relative flex items-center justify-center cursor-pointer overflow-hidden',
+              'relative flex items-center justify-center overflow-hidden min-h-[26svh] md:min-h-0',
               'border-b border-forest-mid/30 md:border-b-0',
               i < PANELS.length - 1 ? 'md:border-r border-forest' : '',
               // CSS flex transition — sin Framer Motion
@@ -57,7 +57,7 @@ export default function Hero() {
                 'object-cover transition-transform duration-700 ease-out',
                 isHovered ? 'scale-105' : 'scale-100',
               ].join(' ')}
-              priority={panel.priority}
+              priority
             />
 
             {/* Overlay */}
@@ -68,20 +68,28 @@ export default function Hero() {
               ].join(' ')}
             />
 
+            {/* Todo el panel es clicable (antes tenía cursor de mano pero solo funcionaba el botón) */}
+            <Link
+              href={`/${locale}/${panel.href}`}
+              aria-hidden="true"
+              tabIndex={-1}
+              className="absolute inset-0 z-[5]"
+            />
+
             {/* Contenido */}
-            <div className="relative z-10 text-center mt-12 md:mt-24 flex flex-col items-center px-4">
-              <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl text-cream-warm mb-6 font-bold tracking-wider">
+            <div className="relative z-10 text-center md:mt-24 flex flex-col items-center px-4 py-6 pointer-events-none">
+              <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl text-cream-warm mb-4 md:mb-6 font-semibold tracking-wide">
                 {t(panel.titleKey)}
               </h2>
               <div
                 className={[
                   'transition-all duration-300',
-                  isHovered ? 'opacity-100 translate-y-0' : 'opacity-60 translate-y-2',
+                  isHovered ? 'opacity-100 translate-y-0' : 'opacity-100 md:opacity-70 md:translate-y-2',
                 ].join(' ')}
               >
                 <Link
                   href={`/${locale}/${panel.href}`}
-                  className="inline-block px-8 py-3 border border-cream/40 text-cream font-sans font-light uppercase tracking-[0.2em] text-[10px] md:text-xs hover:border-gold hover:text-gold transition-colors duration-300 backdrop-blur-sm bg-forest-dark/10"
+                  className="pointer-events-auto inline-block px-8 py-3 border border-cream/60 text-cream font-sans font-medium uppercase tracking-[0.2em] text-[11px] md:text-xs hover:border-gold hover:text-gold transition-colors duration-300 backdrop-blur-sm bg-forest-dark/20"
                 >
                   {t(panel.actionKey)}
                 </Link>
